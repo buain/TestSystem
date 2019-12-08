@@ -13,14 +13,14 @@ namespace TestSystem.DAL.DB
         public DbSet<Test> Tests { get; set; }
         static TestContext()
         {
-            Database.SetInitializer<TestContext>(new BaseDbInitializer());
+            Database.SetInitializer<TestContext>(new TestDbInitializer());
         }
         public TestContext(string connectionString)
             :base(connectionString)
         {
         }
     }
-    public class BaseDbInitializer : DropCreateDatabaseIfTestChanges<TestContext>
+    public class TestDbInitializer : DropCreateDatabaseIfTestChanges<TestContext>
     {
         protected override void Seed(TestContext db)
         {

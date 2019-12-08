@@ -1,0 +1,14 @@
+﻿@model MVCInterface.Models.Confirmation
+@{
+    ViewBag.Title = "Выход из системы";
+}
+
+<h2>Вы хотите выйти из системы?</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <button name="Confirm" value="true">Да</button>
+    <button name="Confirm" value="false">Нет</button>
+}
+
+

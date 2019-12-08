@@ -8,27 +8,36 @@ namespace MVCInterface.Controllers
 {
     public class HomeController : Controller
     {
-        public string Index()
+        
+        public ActionResult Index()
         {
-            string result = "Вы не авторизованы";
             if (User.Identity.IsAuthenticated)
             {
-                result = "Ваш логин: " + User.Identity.Name;
+                return View("IndexLogined"); //result = "Ваш логин: " + User.Identity.Name;
             }
-            return result;
+            return View();
         }
 
         [Authorize]
-        public ActionResult About()
+        public ActionResult Tests()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Страница прохождения тестов.";
 
             return View();
         }
 
-        public ActionResult Contact()
+        [Authorize]
+        public ActionResult Results()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Результаты тестов.";
+
+            return View();
+        }
+
+        [Authorize(Roles = "Admin")]
+        public ActionResult Control()
+        {
+            ViewBag.Message = "Панель управления.";
 
             return View();
         }

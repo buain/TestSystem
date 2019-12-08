@@ -78,3 +78,8 @@ D:\!Programming\.NET\EPAM\Ижевск\TestSystem\MVCInterface\bin\EntityFramewo
 D:\!Programming\.NET\EPAM\Ижевск\TestSystem\MVCInterface\bin\EntityFramework.SqlServer.dll
 D:\!Programming\.NET\EPAM\Ижевск\TestSystem\MVCInterface\bin\EntityFramework.xml
 D:\!Programming\.NET\EPAM\Ижевск\TestSystem\MVCInterface\bin\EntityFramework.SqlServer.xml
+D:\!Programming\.NET\EPAM\Ижевск\TestSystem\MVCInterface\bin\System.Web.Providers.dll
+D:\!Programming\.NET\EPAM\Ижевск\TestSystem\MVCInterface\bin\System.Web.Providers.xml
+D:\!Programming\.NET\EPAM\Ижевск\TestSystem\MVCInterface\bin\TestSystem.BLL.dll
+D:\!Programming\.NET\EPAM\Ижевск\TestSystem\MVCInterface\bin\TestSystem.BLL.pdb
+D:\!Programming\.NET\EPAM\Ижевск\TestSystem\MVCInterface\bin\TestSystem.BLL.dll.config

@@ -1,0 +1,14 @@
+D:\!Programming\.NET\EPAM\Ижевск\TestSystem\TestSystem.BLL\bin\Debug\TestSystem.BLL.dll.config
+D:\!Programming\.NET\EPAM\Ижевск\TestSystem\TestSystem.BLL\bin\Debug\TestSystem.BLL.dll
+D:\!Programming\.NET\EPAM\Ижевск\TestSystem\TestSystem.BLL\bin\Debug\TestSystem.BLL.pdb
+D:\!Programming\.NET\EPAM\Ижевск\TestSystem\TestSystem.BLL\bin\Debug\EntityFramework.dll
+D:\!Programming\.NET\EPAM\Ижевск\TestSystem\TestSystem.BLL\bin\Debug\EntityFramework.SqlServer.dll
+D:\!Programming\.NET\EPAM\Ижевск\TestSystem\TestSystem.BLL\bin\Debug\TestSystem.DAL.Entities.dll
+D:\!Programming\.NET\EPAM\Ижевск\TestSystem\TestSystem.BLL\bin\Debug\TestSystem.DAL.Entities.pdb
+D:\!Programming\.NET\EPAM\Ижевск\TestSystem\TestSystem.BLL\bin\Debug\EntityFramework.xml
+D:\!Programming\.NET\EPAM\Ижевск\TestSystem\TestSystem.BLL\bin\Debug\EntityFramework.SqlServer.xml
+D:\!Programming\.NET\EPAM\Ижевск\TestSystem\TestSystem.BLL\obj\Debug\TestSystem.BLL.csprojAssemblyReference.cache
+D:\!Programming\.NET\EPAM\Ижевск\TestSystem\TestSystem.BLL\obj\Debug\TestSystem.BLL.csproj.CoreCompileInputs.cache
+D:\!Programming\.NET\EPAM\Ижевск\TestSystem\TestSystem.BLL\obj\Debug\TestSystem.BLL.csproj.CopyComplete
+D:\!Programming\.NET\EPAM\Ижевск\TestSystem\TestSystem.BLL\obj\Debug\TestSystem.BLL.dll
+D:\!Programming\.NET\EPAM\Ижевск\TestSystem\TestSystem.BLL\obj\Debug\TestSystem.BLL.pdb

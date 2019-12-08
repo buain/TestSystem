@@ -1,0 +1,6 @@
+D:\!Programming\.NET\EPAM\Ижевск\TestSystem\TestSystem.DAL.Entities\bin\Debug\TestSystem.DAL.Entities.dll
+D:\!Programming\.NET\EPAM\Ижевск\TestSystem\TestSystem.DAL.Entities\bin\Debug\TestSystem.DAL.Entities.pdb
+D:\!Programming\.NET\EPAM\Ижевск\TestSystem\TestSystem.DAL.Entities\obj\Debug\TestSystem.DAL.Entities.csprojAssemblyReference.cache
+D:\!Programming\.NET\EPAM\Ижевск\TestSystem\TestSystem.DAL.Entities\obj\Debug\TestSystem.DAL.Entities.csproj.CoreCompileInputs.cache
+D:\!Programming\.NET\EPAM\Ижевск\TestSystem\TestSystem.DAL.Entities\obj\Debug\TestSystem.DAL.Entities.dll
+D:\!Programming\.NET\EPAM\Ижевск\TestSystem\TestSystem.DAL.Entities\obj\Debug\TestSystem.DAL.Entities.pdb

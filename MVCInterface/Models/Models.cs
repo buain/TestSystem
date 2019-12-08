@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 
 namespace MVCInterface.Models
 {
@@ -14,6 +15,10 @@ namespace MVCInterface.Models
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+        public static void Logoff()
+        {
+            FormsAuthentication.SignOut();
+        }
     }
     public class RegisterModel
     {
@@ -32,4 +37,5 @@ namespace MVCInterface.Models
         [Required]
         public int Age { get; set; }
     }
+    
 }

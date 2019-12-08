@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -10,7 +11,7 @@ namespace MVCInterface.Controllers
 {
     public class AccountController : Controller
     {
-        //Login
+        //Вход Пользователя
         public ActionResult Login() //get version
         {
             return View();
@@ -42,7 +43,7 @@ namespace MVCInterface.Controllers
             return View(model);
         }
 
-        //Registration
+        //Регистрация пользователя
         public ActionResult Register() //get version
         {
             return View();
@@ -63,7 +64,7 @@ namespace MVCInterface.Controllers
                     // create new user
                     using (UserContext db = new UserContext())
                     {
-                        db.Users.Add(new User { Email = model.Name, Password = model.Password, Age = model.Age });
+                        db.Users.Add(new User { Email = model.Name, Password = model.Password, Age = model.Age, RoleId = 2 });
                         db.SaveChanges();
 
                         //try to get user from DB:
@@ -84,10 +85,23 @@ namespace MVCInterface.Controllers
 
             return View(model);
         }
-        public ActionResult Logoff()
+
+        //Выход пользователя
+        public ActionResult Logoff() //Метод, отправляющий на страницу разлогинивания
+        {    
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Logoff(Confirmation model) //Метод выхода из системы
         {
-            FormsAuthentication.SignOut();
-            return RedirectToAction("Index", "Home");
+
+            if (model.Confirm)
+            {
+                LoginModel.Logoff();
+            }
+
+            return RedirectToAction("Index", "Home"); //Перенаправление на начальную страницу
         }
     }
 }

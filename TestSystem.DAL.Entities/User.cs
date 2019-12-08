@@ -82,5 +82,9 @@ namespace TestSystem.DAL.Entities
                 return years;
             }
         }
+        public User()
+        {
+
+        }
     }
 }
