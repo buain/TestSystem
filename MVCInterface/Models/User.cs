@@ -17,6 +17,7 @@ namespace MVCInterface.Models
 
         
         public User() { }
+
     }
     public class Role //Admin or User
     {

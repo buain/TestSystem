@@ -39,7 +39,7 @@ namespace MVCInterface.Providers
         /// <summary>
         /// Для одного пользователя может быть несколько ролей
         /// </summary>
-        /// <param name="username" - ник, который передается в качестве параметра></param>
+        /// <param name="username" - ник(email), который передается в качестве параметра></param>
         /// <returns></returns>
         public override string[] GetRolesForUser(string username) //
         {
@@ -70,7 +70,7 @@ namespace MVCInterface.Providers
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="username" - ник пользователя></param>
+        /// <param name="username" - ник(email) пользователя></param>
         /// <param name="roleName" - роль, которая передается в качестве второго параметра></param>
         /// <returns></returns>
         public override bool IsUserInRole(string username, string roleName) //

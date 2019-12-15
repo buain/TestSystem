@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVCInterface.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,8 +11,16 @@ namespace MVCInterface.Controllers
     {
         // GET: Users
         //Показатть список всех пользователей
-        //[AllowAnonymous]
-        //public ActionResult Index()
+      
+        UserContext db = new UserContext();
+        public ActionResult GetAllUsers()
+        {
+            IEnumerable<Models.User> users = db.Users;
+            ViewBag.Users = users;
+            return View();
+        }
+
+        //public ActionResult GetAllUsers()
         //{
         //    var model = User.GetAllUsers();
         //    return View(model);

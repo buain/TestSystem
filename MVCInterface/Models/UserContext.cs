@@ -14,6 +14,10 @@ namespace MVCInterface.Models
 
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
+        public DbSet<Test> Tests { get; set; }
+        public DbSet<Question> Questions { get; set; }
+        public DbSet<Answer> Answers { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
     public class UserDbInitializer : DropCreateDatabaseAlways<UserContext>
     {
