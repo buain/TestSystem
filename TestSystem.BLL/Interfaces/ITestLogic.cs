@@ -11,6 +11,10 @@ namespace TestSystem.BLL.Interfaces
     {
         TestDTO GetTestById(int? id);
         IEnumerable<TestDTO> GetAll();
+        void Create(TestDTO testDTO);
+        void StartTest(TestDTO testDTO);
+        void Edit(TestDTO testDTO);
+        void Delete(TestDTO testDTO);
         void Dispose();
     }
 }

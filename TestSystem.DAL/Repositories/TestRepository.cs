@@ -50,5 +50,9 @@ namespace TestSystem.DAL.Repositories
             if (test != null)
                 db.Tests.Remove(test);
         }
+        public void Start(Test test)
+        {
+            db.Entry(test).State = EntityState.Modified;
+        }
     }
 }

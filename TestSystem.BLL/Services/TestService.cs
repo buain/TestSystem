@@ -43,7 +43,22 @@ namespace TestSystem.BLL.Services
                 Id_Category = test.Id_Category
             };
         }
+        public void Create(TestDTO testDTO)
+        {
+            
+        }
+        public void Edit(TestDTO testDTO)
+        {
 
+        }
+        public void Delete(TestDTO testDTO)
+        {
+
+        }
+        public void StartTest(TestDTO testDTO)
+        {
+
+        }
         public void Dispose()
         {
             Database.Dispose();

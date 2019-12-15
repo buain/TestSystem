@@ -1,40 +1,61 @@
-﻿@model IEnumerable<MVCInterface.Models.Test>
+﻿@model IEnumerable<TestSystem.BLL.DTO.TestDTO>
 @{
     ViewBag.Title = "TestsList";
 }
 
-<h2>TestsList</h2>
+<h2>Список тестов</h2>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Id_Category)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TimeForTest)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
+<table>
+    @foreach (var c in Model)
     {
         <tr>
+            <td>@c.Title</td>
             <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id_Category)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TimeForTest)
-            </td>
-            <td>
-                @Html.ActionLink("Order", "MakeOrder", new { id = item.Id })
+                @Html.ActionLink("Смотреть", "Details", "Home", new { id = c.Id },
+                    new { @class = "viewDialog",  data_dialog_title = "Описание теста" }) |
+                @Html.ActionLink("Изменить", "Edit", "Home", new { id = c.Id },
+                    new { @class = "viewDialog", data_dialog_title = "Редактирование теста" }) |
+                @Html.ActionLink("Удалить", "Delete", "Home", new { id = c.Id },
+                    new { @class = "viewDialog", data_dialog_title = "Удаление теста" })
             </td>
         </tr>
     }
-
 </table>
+<p> @Html.ActionLink("Добавить", "Create", "Home", new { }, new { @class = "viewDialog", data_dialog_title = "Создание теста" })</p>
+
+<script src='@Url.Content("~/Scripts/jquery-1.12.4.min.js")' type="text/javascript"></script>
+<script src='@Url.Content("~/Scripts/jquery-ui-1.12.1.min.js")' type="text/javascript"></script>
+<script>
+     $(document).ready(function () {
+ 
+        $.ajaxSetup({ cache: false });
+ 
+        $(".viewDialog").on("click", function (e) {
+            e.preventDefault();
+ 
+            $("<div id='dialogContent'></div>")
+                .addClass("dialog")
+                .appendTo("body")
+                .load(this.href)
+                .dialog({
+                    title: $(this).attr("data-dialog-title"),
+                    close: function () { $(this).remove() },
+                    modal: true,
+                    buttons: {
+                        "Сохранить": function () {
+                            $.ajax({
+                             url: "@Url.Action("Create", "Home")",
+                             type: "POST",
+                             data: $('form').serialize(),
+                             datatype: "json",
+                             success: function (result) {
+ 
+                                 $("#dialogContent").html(result);
+                                }
+                            });
+                        }
+                    }
+                });
+        });
+    });
+</script>

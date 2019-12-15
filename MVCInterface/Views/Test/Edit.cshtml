@@ -1,0 +1,25 @@
+﻿@model TestSystem.BLL.DTO.TestDTO
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.Id)
+        <div>
+            @Html.LabelFor(model => model.Id_Owner)
+            <p>@Html.EditorFor(model => model.Id_Owner)</p>
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Title)
+            <p>@Html.EditorFor(model => model.Title)</p>
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Id_Category)
+            <p>@Html.EditorFor(model => model.Id_Category)</p>
+        </div>
+        <div>
+            @Html.LabelFor(model => model.TimeForTest)
+            <p>@Html.EditorFor(model => model.TimeForTest)</p>
+        </div>
+        <p><input type="submit" value="Сохранить" /></p>
+    }
+</div>

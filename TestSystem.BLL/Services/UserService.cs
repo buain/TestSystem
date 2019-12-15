@@ -42,6 +42,14 @@ namespace TestSystem.BLL.Services
                 RoleId = user.RoleId
             };
         }
+        public void Create(UserDTO userDTO)
+        {
+
+        }
+        public void Delete(int id)
+        {
+
+        }
 
         public void Dispose()
         {

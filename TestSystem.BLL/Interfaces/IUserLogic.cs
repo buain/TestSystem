@@ -10,8 +10,9 @@ namespace TestSystem.BLL.Interfaces
     public interface IUserLogic
     {
         UserDTO GetUserById(int? id);
-        //User GetUserByEmail(string? email);
         IEnumerable<UserDTO> GetAll();
+        void Create(UserDTO userDTO);
+        void Delete(int id);
         void Dispose();
     }
 }

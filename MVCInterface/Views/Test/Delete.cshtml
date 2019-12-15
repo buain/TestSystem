@@ -1,0 +1,15 @@
+﻿@model TestSystem.BLL.DTO.TestDTO
+
+<h3>Вы действительно хотите удалить этот тест?</h3>
+<div>
+    <p>Ид.: @Html.DisplayFor(m => m.Id)</p>
+    <p>Название: @Html.DisplayFor(m => m.Title)</p>
+    <p>Владелец: @Html.DisplayFor(m => m.Id_Owner)</p>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <input type="submit" value="Удалить" />
+    }
+</div>

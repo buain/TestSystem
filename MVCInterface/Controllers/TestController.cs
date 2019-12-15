@@ -14,70 +14,80 @@ namespace MVCInterface.Controllers
     {
         // GET:
         UserContext db = new UserContext();
-        //public ActionResult TestsList()
-        //{
-        //    IEnumerable<Models.Test> tests = db.Tests;
-        //    ViewBag.Tests = tests;
-        //    return View();
-        //}
+        
         ITestLogic testLogic;
         public TestController(ITestLogic logic)
         {
             testLogic = logic;
         }
-        public ActionResult TestsList() // Вывод списка тестов
-        {
-            IEnumerable<TestDTO> testDTOs = testLogic.GetAll();
-            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<TestDTO, Test>()).CreateMapper();
-            var testList = mapper.Map<IEnumerable<TestDTO>, List<Test>>(testDTOs);
-            //ViewBag.Tests = tests;
-            return View(testList);
-        }
-        //GET:
+        //public ActionResult TestsList() // Вывод списка тестов
+        //{
+        //    IEnumerable<TestDTO> testDTOs = testLogic.GetAll();
+        //    var mapper = new MapperConfiguration(cfg => cfg.CreateMap<TestDTO, Test>()).CreateMapper();
+        //    var testList = mapper.Map<IEnumerable<TestDTO>, List<Test>>(testDTOs);
+        //    //ViewBag.Tests = tests;
+        //    return View(testList);
+        //}
+        //GET: Добавление теста
         [Authorize(Roles = "Admin")]
+        
         public ActionResult Create()
         {
-            return View();
+            return PartialView("Create");
         }
         //POST:
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
-        public ActionResult Create(Models.Test model)
-        {
-            if (ModelState.IsValid)
-            {
-                Models.Test.Create(model);
-                return RedirectToAction("TestsList");
-            }
-
-            return View(model);
-        }
-        //GET:
-        [Authorize(Roles = "Admin")]
-        public ActionResult Change()
-        {
-            return View();
-        }
-        //POST:
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin")]
-        public ActionResult Change(Models.Test model)
+        public ActionResult Create(TestDTO testDTO)
         {
             //
-
-            return View(model);
+            return RedirectToAction("TestList");
         }
+
+        //GET: Изменение теста
+        [Authorize(Roles = "Admin")]
+        public ActionResult Edit()
+        {
+            return PartialView("Edit");
+        }
+        //POST:
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+        public ActionResult Edit(TestDTO testDTO)
+        {
+            //
+            return RedirectToAction("TestList");
+        }
+        //GET: Удаление теста
+        [Authorize(Roles = "Admin")]
+        public ActionResult Delete()
+        {
+            return PartialView("Delete");
+        }
+        //POST:
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+        public ActionResult Delete(TestDTO testDTO)
+        {
+            //
+            return RedirectToAction("TestList");
+        }
+        //GET: Запустить тест
         public ActionResult StartTest()
         {
             return View();
         }
-        public ActionResult StartTest(Models.Test model)
+        //POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize]
+        public ActionResult StartTest(TestDTO testDTO)
         {
             //
-
-            return View(model);
+            return View("StartTest");
         }
         [HttpGet]
         public ActionResult Test1()
