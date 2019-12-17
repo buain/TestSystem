@@ -41,8 +41,19 @@ namespace MVCInterface.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult Create(TestDTO testDTO)
         {
-            //
-            return RedirectToAction("TestList");
+            if (ModelState.IsValid)
+            {
+                // Настройка AutoMapper
+                Mapper.Initialize(cfg => cfg.CreateMap<TestDTO, Test>()
+                    .ForMember("Название", opt => opt.MapFrom(c => c.Title))
+                    .ForMember("Категория", opt => opt.MapFrom(src => src.Id_Category))
+                    .ForMember("Время", opt => opt.MapFrom(src => src.TimeForTest)));
+                // Выполняем сопоставление
+                Test test = Mapper.Map<TestDTO, Test>(testDTO);
+                testLogic.Create(testDTO);
+                return RedirectToAction("TestList");
+            }
+            return View("Tests");
         }
 
         //GET: Изменение теста
