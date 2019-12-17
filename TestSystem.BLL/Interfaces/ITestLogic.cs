@@ -13,7 +13,8 @@ namespace TestSystem.BLL.Interfaces
         IEnumerable<TestDTO> GetAll();
         void Create(TestDTO testDTO);
         void StartTest(TestDTO testDTO);
-        void Edit(TestDTO testDTO);
+        void Edit(int? id);
+        void Update(TestDTO testDTO);
         void Delete(TestDTO testDTO);
         void Dispose();
     }

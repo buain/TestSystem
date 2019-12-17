@@ -47,7 +47,7 @@ namespace TestSystem.BLL.Services
         {
             
         }
-        public void Edit(TestDTO testDTO)
+        public void Edit(int? id)
         {
 
         }
@@ -56,6 +56,10 @@ namespace TestSystem.BLL.Services
 
         }
         public void StartTest(TestDTO testDTO)
+        {
+
+        }
+        public void Update(TestDTO testDTO)
         {
 
         }

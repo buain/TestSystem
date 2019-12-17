@@ -154,6 +154,7 @@
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Confirmation.cs" />
+    <Compile Include="Models\EditTestViewModel.cs" />
     <Compile Include="Models\Models.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\Test.cs" />

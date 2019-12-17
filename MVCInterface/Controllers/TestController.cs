@@ -58,8 +58,16 @@ namespace MVCInterface.Controllers
 
         //GET: Изменение теста
         [Authorize(Roles = "Admin")]
-        public ActionResult Edit()
+        public ActionResult Edit(int? id)
         {
+            if (id == null)
+                return HttpNotFound();
+            // Настройка AutoMapper
+            Mapper.Initialize(cfg => cfg.CreateMap<Test, TestDTO>()
+                    .ForMember("Название", opt => opt.MapFrom(src => src.Title)));
+            // Выполняем сопоставление
+            TestDTO testDTO = Mapper.Map<Test, TestDTO>(testLogic.EditTestViewModel(id.Value));
+            
             return PartialView("Edit");
         }
         //POST:
@@ -68,8 +76,17 @@ namespace MVCInterface.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult Edit(TestDTO testDTO)
         {
-            //
-            return RedirectToAction("TestList");
+            if (ModelState.IsValid)
+            {
+                // Настройка AutoMapper
+                Mapper.Initialize(cfg => cfg.CreateMap<EditTestViewModel, Test>()
+                    .ForMember("Название", opt => opt.MapFrom(src => src.Title)));
+                // Выполняем сопоставление
+                Test test = Mapper.Map<EditTestViewModel, Test>(testDTO);
+                testLogic.Update(testDTO);
+                return RedirectToAction("TestList");
+            }
+            return RedirectToAction("Tests");
         }
         //GET: Удаление теста
         [Authorize(Roles = "Admin")]
