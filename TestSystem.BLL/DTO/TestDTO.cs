@@ -15,7 +15,7 @@ namespace TestSystem.BLL.DTO
 
         [Display(Name = "Название")]
         [Required]
-        [MaxLength(20, ErrorMessage = "Превышена допустима длина строки")]
+        [MaxLength(20, ErrorMessage = "Превышена допустимая длина строки")]
         public string Title { get; set; }
         public int TimeForTest { get; set; }
         public int Id_Category { get; set; }
