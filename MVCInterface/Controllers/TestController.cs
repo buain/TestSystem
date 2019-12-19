@@ -47,7 +47,7 @@ namespace MVCInterface.Controllers
                 Mapper.Initialize(cfg => cfg.CreateMap<TestDTO, Test>()
                     .ForMember("Название", opt => opt.MapFrom(c => c.Title))
                     .ForMember("Категория", opt => opt.MapFrom(src => src.Id_Category))
-                    .ForMember("Время", opt => opt.MapFrom(src => src.TimeForTest)));
+                    .ForMember("Время на тест", opt => opt.MapFrom(src => src.TimeForTest)));
                 // Выполняем сопоставление
                 Test test = Mapper.Map<TestDTO, Test>(testDTO);
                 testLogic.Create(testDTO);
