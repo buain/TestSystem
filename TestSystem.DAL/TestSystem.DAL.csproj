@@ -94,7 +94,6 @@
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\Test.cs" />
     <Compile Include="Entities\User.cs" />
-    <Compile Include="Entities\UserAnswer.cs" />
     <Compile Include="Entities\UserTestingSession.cs" />
     <Compile Include="Entities\UserTimeOfTest.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
