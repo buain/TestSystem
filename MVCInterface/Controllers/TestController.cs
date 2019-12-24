@@ -66,7 +66,7 @@ namespace MVCInterface.Controllers
             Mapper.Initialize(cfg => cfg.CreateMap<Test, TestDTO>()
                     .ForMember("Название", opt => opt.MapFrom(src => src.Title)));
             // Выполняем сопоставление
-            TestDTO testDTO = Mapper.Map<Test, TestDTO>(testLogic.EditTestViewModel(id.Value));
+            //TestDTO testDTO = Mapper.Map<Test, TestDTO>(testLogic.EditTestViewModel(id.Value));
             
             return PartialView("Edit");
         }
@@ -82,7 +82,7 @@ namespace MVCInterface.Controllers
                 Mapper.Initialize(cfg => cfg.CreateMap<EditTestViewModel, Test>()
                     .ForMember("Название", opt => opt.MapFrom(src => src.Title)));
                 // Выполняем сопоставление
-                Test test = Mapper.Map<EditTestViewModel, Test>(testDTO);
+                //Test test = Mapper.Map<EditTestViewModel, Test>(testDTO);
                 testLogic.Update(testDTO);
                 return RedirectToAction("TestList");
             }
