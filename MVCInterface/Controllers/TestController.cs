@@ -67,6 +67,7 @@ namespace MVCInterface.Controllers
                     .ForMember("Название", opt => opt.MapFrom(src => src.Title)));
             // Выполняем сопоставление
             //TestDTO testDTO = Mapper.Map<Test, TestDTO>(testLogic.EditTestViewModel(id.Value));
+
             return PartialView("Edit");
         }
         //POST:
